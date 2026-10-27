@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import ListaTarefas from './components/ListaTarefas'
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
 
 function App() {
   const [texto, setTexto] = useState('')
@@ -40,30 +42,21 @@ function App() {
   }
 
   return (
-    <main className="app">
-      <h1>Minha Lista de Tarefas</h1>
-      <p className="subtitulo">Acompanhe seus estudos e organize o que precisa fazer.</p>
-
-      <form className="formulario" onSubmit={adicionarTarefa}>
-        <label htmlFor="campo-tarefa">Nova tarefa</label>
-        <div className="linha-formulario">
-          <input
-            id="campo-tarefa"
-            type="text"
-            value={texto}
-            onChange={(evento) => setTexto(evento.target.value)}
-            placeholder="Ex.: estudar matemática"
-          />
-          <button type="submit">Adicionar</button>
-        </div>
-      </form>
-
-      <ListaTarefas
+    <div className="app">
+      <Header />
+      <Main
+        texto={texto}
+        setTexto={setTexto}
+        adicionarTarefa={adicionarTarefa}
         tarefas={tarefas}
         alternarConcluida={alternarConcluida}
         excluirTarefa={excluirTarefa}
       />
-    </main>
+      <Footer
+        totalTarefas={tarefas.length}
+        tarefasConcluidas={tarefas.filter((tarefa) => tarefa.concluida).length}
+      />
+    </div>
   )
 }
 

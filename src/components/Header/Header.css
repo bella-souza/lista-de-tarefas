@@ -1,0 +1,81 @@
+.site-header {
+  width: min(100% - 48px, 1040px);
+  min-height: 82px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(148, 183, 219, 0.12);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #e7f1ff;
+  font-size: 1.16rem;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.marca-icone {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(103, 232, 249, 0.32);
+  border-radius: 11px;
+  background: linear-gradient(145deg, rgba(14, 165, 233, 0.25), rgba(8, 47, 73, 0.7));
+  color: #67e8f9;
+}
+
+.marca-icone svg {
+  width: 21px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.marca-destaque {
+  color: #67e8f9;
+}
+
+.navegacao {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navegacao a {
+  color: #a9bad0;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.navegacao a:hover {
+  color: #67e8f9;
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    width: calc(100% - 28px);
+    min-height: 70px;
+  }
+
+  .navegacao {
+    gap: 14px;
+  }
+
+  .navegacao a {
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navegacao a {
+    transition: none;
+  }
+}

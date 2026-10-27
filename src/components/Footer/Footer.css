@@ -1,0 +1,37 @@
+.site-footer {
+  width: min(100% - 48px, 1040px);
+  min-height: 74px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(148, 183, 219, 0.12);
+  color: #8196ae;
+  font-size: 0.8rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.resumo-tarefas {
+  color: #a5c1d9;
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    width: calc(100% - 28px);
+    min-height: 68px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.75rem;
+  }
+
+  .resumo-tarefas {
+    text-align: left;
+  }
+}

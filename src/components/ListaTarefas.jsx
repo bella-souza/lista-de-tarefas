@@ -1,9 +1,17 @@
 function ListaTarefas({ tarefas, alternarConcluida, excluirTarefa }) {
   return (
-    <section className="lista" aria-live="polite">
-      <h2>Tarefas</h2>
+    <section className="lista" id="tarefas" aria-labelledby="titulo-tarefas" aria-live="polite">
+      <div className="lista-cabecalho">
+        <div>
+          <span className="rotulo-secao">SEU PAINEL</span>
+          <h2 id="titulo-tarefas">Suas tarefas</h2>
+        </div>
+        <span className="contador-tarefas">
+          {tarefas.length} {tarefas.length === 1 ? 'tarefa' : 'tarefas'}
+        </span>
+      </div>
       {tarefas.length === 0 ? (
-        <p className="vazia">Nenhuma tarefa na lista. Digite uma atividade e clique em Adicionar.</p>
+        <p className="vazia">Sua lista está pronta para começar. Adicione uma tarefa acima.</p>
       ) : (
         <ul>
           {tarefas.map((tarefa) => (
@@ -20,6 +28,7 @@ function ListaTarefas({ tarefas, alternarConcluida, excluirTarefa }) {
                 type="button"
                 className="excluir"
                 onClick={() => excluirTarefa(tarefa.id)}
+                aria-label={`Excluir tarefa: ${tarefa.texto}`}
               >
                 Excluir
               </button>
